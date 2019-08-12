@@ -1,70 +1,14 @@
 'use strict';
 
-var myApp = {
-  title: 'The Main Title',
-  option: []
+var getName = function getName(name) {
+  return name.split(' ')[0];
 };
 
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    myApp.title
-  ),
-  myApp.subtitle && React.createElement(
-    'p',
-    null,
-    myApp.subtitle
-  ),
-  myApp.option.length > 0 ? 'Here are your options' : 'no options',
-  React.createElement(
-    'ol',
-    null,
-    React.createElement(
-      'li',
-      null,
-      'Item 1'
-    ),
-    React.createElement(
-      'li',
-      null,
-      'Item 2'
-    )
-  )
-);
-function getLocation(location) {
-  if (location) return location;else return ' N/A ';
-}
-
-var obj = {
-  name: 'robin',
-  age: 23,
-  location: 'NY'
+var getNameShort = function getNameShort(name) {
+  return name.split(' ')[0];
 };
 
-var template2 = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'p',
-    null,
-    'Name ',
-    obj.name
-  ),
-  React.createElement(
-    'p',
-    null,
-    'Age ',
-    obj.age
-  ),
-  React.createElement(
-    'p',
-    null,
-    'Location ',
-    getLocation(obj.location)
-  )
-);
-var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+var name = 'Vaibhav Singh';
+
+console.log('arrow , ', getName(name));
+console.log('short arrow,  ', getNameShort(name));
