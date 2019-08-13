@@ -14,23 +14,30 @@ const template = (
     </ol>
   </div>
 );
-function getLocation(location) {
-  if (location) return location;
-  else return ' N/A ';
-}
 
-const obj = {
-  name: 'robin',
-  age: 23,
-  location: 'NY'
+let count = 0;
+
+const addOne = () => {
+  console.log('addOne');
 };
 
-const template2 = (
+const minusOne = () => {
+  console.log('minusOne');
+};
+
+const reset = () => {
+  console.log('Reset');
+};
+
+const templateTwo = (
   <div>
-    <p>Name {obj.name}</p>
-    <p>Age {obj.age}</p>
-    <p>Location {getLocation(obj.location)}</p>
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minusOne}>-1</button>
+    <button onClick={reset}>Reset Count</button>
   </div>
 );
+
 const appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+
+ReactDOM.render(templateTwo, appRoot);

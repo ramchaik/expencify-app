@@ -1,5 +1,6 @@
 {
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
-  "editor.fontFamily": "'Input', Menlo, Monaco, 'Courier New', monospace"
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14
 }
