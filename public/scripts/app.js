@@ -21,6 +21,13 @@ var onRemoveAll = function onRemoveAll() {
   render();
 };
 
+var onMakeDecision = function onMakeDecision() {
+  var len = app.options.length;
+  var randNum = len && Math.floor(Math.random() * len);
+  var option = app.options[randNum];
+  alert(option);
+};
+
 var appRoot = document.getElementById('app');
 
 var render = function render() {
@@ -39,9 +46,9 @@ var render = function render() {
     ),
     app.options.length > 0 ? 'Here are your options' : 'no options',
     React.createElement(
-      'p',
-      null,
-      app.options.length
+      'button',
+      { disabled: !app.options.length, onClick: onMakeDecision },
+      'What should I do ?'
     ),
     React.createElement(
       'button',
