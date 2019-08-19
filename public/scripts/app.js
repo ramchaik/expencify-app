@@ -23,10 +23,26 @@ var IndecisionApp = function (_React$Component) {
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
+    console.log('constructor');
     return _this;
   }
 
   _createClass(IndecisionApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('componentDidMount');
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      console.log('componentDidUpdate');
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      console.log('componentWillUnmount');
+    }
+  }, {
     key: 'handleAddOption',
     value: function handleAddOption(option) {
       if (!option) {
@@ -140,7 +156,11 @@ var Options = function Options(props) {
       'Remove All'
     ),
     props.options.map(function (option, index) {
-      return React.createElement(Option, { key: index, value: option, handleDeleteOption: props.handleDeleteOption });
+      return React.createElement(Option, {
+        key: index,
+        value: option,
+        handleDeleteOption: props.handleDeleteOption
+      });
     })
   );
 };

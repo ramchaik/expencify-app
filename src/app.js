@@ -8,6 +8,16 @@ class IndecisionApp extends React.Component {
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
+    console.log('constructor');
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
   }
 
   handleAddOption(option) {
@@ -25,7 +35,7 @@ class IndecisionApp extends React.Component {
   }
 
   handleDeleteOption(optionToDelete) {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       options: prevState.options.filter(option => option !== optionToDelete)
     }));
   }
@@ -91,7 +101,13 @@ const Options = props => {
   return (
     <div>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
-      {props.options.map((option, index) => (<Option key={index} value={option} handleDeleteOption={props.handleDeleteOption}/>))}
+      {props.options.map((option, index) => (
+        <Option
+          key={index}
+          value={option}
+          handleDeleteOption={props.handleDeleteOption}
+        />
+      ))}
     </div>
   );
 };
@@ -99,8 +115,13 @@ const Options = props => {
 const Option = props => {
   return (
     <div>
-      <span>{props.value}{'         ' }</span>
-      <button onClick={() => props.handleDeleteOption(props.value)}>Remove</button>
+      <span>
+        {props.value}
+        {'         '}
+      </span>
+      <button onClick={() => props.handleDeleteOption(props.value)}>
+        Remove
+      </button>
     </div>
   );
 };
