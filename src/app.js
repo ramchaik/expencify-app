@@ -2,23 +2,30 @@ class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      options: props.options
+      options: []
     };
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
-    console.log('constructor');
   }
   componentDidMount() {
-    console.log('componentDidMount');
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+
+      if (options) this.setState(() => ({ options }));
+    } catch (error) {
+      // Do nothing 
+    }
   }
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem('options', json);
+    }
   }
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+  componentWillUnmount() {}
 
   handleAddOption(option) {
     if (!option) {
@@ -83,10 +90,6 @@ const Header = props => {
   );
 };
 
-Header.defaultProps = {
-  title: 'Indecision'
-};
-
 const Action = props => {
   return (
     <div>
@@ -101,6 +104,7 @@ const Options = props => {
   return (
     <div>
       <button onClick={props.handleDeleteOptions}>Remove All</button>
+      { props.options.length === 0 && <p> Please add an option to get started. </p> }
       {props.options.map((option, index) => (
         <Option
           key={index}
@@ -141,7 +145,9 @@ class AddOption extends React.Component {
 
     this.setState(() => ({ error }));
 
-    e.target.elements.option.value = '';
+    if (!error) {
+      e.target.elements.option.value = '';
+    }
   }
 
   render() {
@@ -158,6 +164,6 @@ class AddOption extends React.Component {
 }
 
 ReactDOM.render(
-  <IndecisionApp options={['Devils den', 'Hudsen River']} />,
+  <IndecisionApp />,
   document.getElementById('app')
 );
