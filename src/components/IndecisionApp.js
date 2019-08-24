@@ -5,16 +5,37 @@ import Action from './Action';
 import Options from './Options';
 
 export default class IndecisionApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      options: []
-    };
-    this.handleAddOption = this.handleAddOption.bind(this);
-    this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-    this.handlePick = this.handlePick.bind(this);
-    this.handleDeleteOption = this.handleDeleteOption.bind(this);
-  }
+  state = {
+    options: []
+  };
+
+  handleAddOption = option => {
+    if (!option) {
+      return 'Enter a valid value to add item.';
+    } else if (this.state.options.indexOf(option) > -1) {
+      return 'This option already exists.';
+    }
+
+    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+  };
+
+  handleDeleteOptions = () => {
+    this.setState(() => ({ options: [] }));
+  };
+
+  handleDeleteOption = optionToDelete => {
+    this.setState(prevState => ({
+      options: prevState.options.filter(option => option !== optionToDelete)
+    }));
+  };
+
+  handlePick = () => {
+    const options = this.state.options;
+    const len = options.length;
+    const index = Math.floor(Math.random() * len);
+    alert(options[index]);
+  };
+
   componentDidMount() {
     try {
       const json = localStorage.getItem('options');
@@ -25,40 +46,15 @@ export default class IndecisionApp extends React.Component {
       // Do nothing
     }
   }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
   }
+
   componentWillUnmount() {}
-
-  handleAddOption(option) {
-    if (!option) {
-      return 'Enter a valid value to add item.';
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'This option already exists.';
-    }
-
-    this.setState(prevState => ({ options: prevState.options.concat(option) }));
-  }
-
-  handleDeleteOptions() {
-    this.setState(() => ({ options: [] }));
-  }
-
-  handleDeleteOption(optionToDelete) {
-    this.setState(prevState => ({
-      options: prevState.options.filter(option => option !== optionToDelete)
-    }));
-  }
-
-  handlePick() {
-    const options = this.state.options;
-    const len = options.length;
-    const index = Math.floor(Math.random() * len);
-    alert(options[index]);
-  }
 
   render() {
     const subtitle = 'Put your life in hands of a computer.';
