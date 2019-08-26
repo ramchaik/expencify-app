@@ -3,12 +3,18 @@ import AddOption from './AddOption';
 import Header from './Header';
 import Action from './Action';
 import Options from './Options';
+import OptionModal from './OptionModal';
 
 export default class IndecisionApp extends React.Component {
   state = {
-    options: []
+    options: [],
+    selectedOption: undefined
   };
-
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedOption: undefined
+    }));
+  };
   handleAddOption = option => {
     if (!option) {
       return 'Enter a valid value to add item.';
@@ -33,7 +39,10 @@ export default class IndecisionApp extends React.Component {
     const options = this.state.options;
     const len = options.length;
     const index = Math.floor(Math.random() * len);
-    alert(options[index]);
+    const option = options[index];
+    this.setState(() => ({
+      selectedOption: option
+    }));
   };
 
   componentDidMount() {
@@ -73,6 +82,10 @@ export default class IndecisionApp extends React.Component {
         <AddOption
           options={this.state.options}
           handleAddOption={this.handleAddOption}
+        />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          onClose={this.handleClearSelectedOption}
         />
       </div>
     );
