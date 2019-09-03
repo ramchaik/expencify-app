@@ -6,7 +6,10 @@ const Option = props => (
       {props.value}
       {'         '}
     </span>
-    <button onClick={() => props.handleDeleteOption(props.value)}>
+    <button
+      className='button button--link '
+      onClick={() => props.handleDeleteOption(props.value)}
+    >
       Remove
     </button>
   </div>
