@@ -1,6 +1,43 @@
 {
-  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "prettier.jsxSingleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.wordWrap": "on",
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "vscode-icons",
   "editor.tabSize": 2,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.singleQuote": true,
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 14,
+  "workbench.sideBar.location": "left",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.minimap.enabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.colorTheme": "Night Owl",
+  "editor.fontSize": 16,
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 14
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.copyWithSyntaxHighlighting": true,
+  "files.associations": {
+    "Dockerfile-centos": "dockerfile",
+    "Dockerfile_*": "dockerfile",
+    "Dockerfile-*": "dockerfile"
+  },
+  "workbench.editor.closeEmptyGroups": true,
+  "breadcrumbs.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "debug.node.autoAttach": "off",
+   
 }
