@@ -9,25 +9,25 @@ const Info = props => {
 
 const withAdminWarning = WrappedComponent => {
   // This return is HOC
-  return props => {
-    return (
+  return props => (
       <div>
         {props.isAdmin && <p>This is a admin message.</p>}
         <WrappedComponent {...props} />
       </div>
     );
-  };
 };
 
-const requireAuthentication = (WrappedComponent) => {
-  return (props) => {
-    return (
+const requireAuthentication = WrappedComponent => {
+  return props => (
       <div>
-        { props.isAuthenticated ? <WrappedComponent {...props} /> : <p>Not a valid user. </p>}
+        {props.isAuthenticated ? (
+          <WrappedComponent {...props} />
+        ) : (
+          <p>Login is required. </p>
+        )}
       </div>
     );
-  }
-}
+};
 
 const AdminInfo = withAdminWarning(Info);
 const AuthInfo = requireAuthentication(Info);
