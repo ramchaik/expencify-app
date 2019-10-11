@@ -23,7 +23,7 @@
 	"files.associations": {
 		"Dockerfile-centos": "dockerfile",
 		"Dockerfile_*": "dockerfile",
-		"Dockerfile-*": "dockerfile"
+		"Dockerfile-*": "dockerfile",
 	},
 	"workbench.editor.closeEmptyGroups": true,
 	"breadcrumbs.enabled": true,
@@ -31,9 +31,9 @@
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"terminal.integrated.shell.osx": "/bin/zsh",
 	"debug.node.autoAttach": "off",
-	"editor.insertSpaces": true,
+	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
-	"editor.detectIndentation": true,
+	// "editor.detectIndentation": true
 	"[javascript]": {
 		"editor.defaultFormatter": "HookyQR.beautify"
 	}
