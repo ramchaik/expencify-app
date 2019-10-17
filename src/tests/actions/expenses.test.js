@@ -3,7 +3,6 @@ import {
 	editExpense,
 	removeExpense
 } from '../../actions/expenses';
-import uuid from 'uuid';
 
 test('should setup remove expense action object', () => {
 	const action = removeExpense({ id: '123abc' });
