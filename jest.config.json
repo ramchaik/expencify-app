@@ -1,0 +1,10 @@
+{
+	"setupFiles": [
+		"raf/polyfill",
+		"<rootDir>/src/tests/setupTests.js"
+	],
+	// saves just the needed data in snapshot
+	"snapshotSerializers": [
+		"enzyme-to-json/serializer"
+	]
+}
