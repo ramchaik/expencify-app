@@ -14,6 +14,7 @@ import getVisibleExpenses from './selectors/expenses';
 import AppRouter from './routers/AppRouter';
 import 'normalize.css/normalize.css';
 import './styles/style.scss';
+import 'react-dates/lib/css/_datepicker.css';
 
 const store = configureStore();
 
