@@ -36,5 +36,9 @@
 	// "editor.detectIndentation": true
 	"[javascript]": {
 		"editor.defaultFormatter": "HookyQR.beautify"
+	},
+	"workbench.colorCustomizations": {
+		"terminal.foreground": "#839495",
+		"terminal.background": "#003440"
 	}
 }
