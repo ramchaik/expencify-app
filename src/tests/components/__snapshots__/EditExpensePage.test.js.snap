@@ -14,10 +14,12 @@ exports[`should render EditExpensePage 1`] = `
     }
     onSubmit={[Function]}
   />
+   
   <button
     onClick={[Function]}
   >
-    Remove
+    Remove 
   </button>
+   
 </div>
 `;

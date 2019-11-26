@@ -1,44 +1,45 @@
 {
-	"editor.formatOnSave": true,
-	"prettier.jsxSingleQuote": true,
-	"emmet.includeLanguages": {
-		"javascript": "javascriptreact"
-	},
-	"editor.wordWrap": "on",
-	"window.zoomLevel": 0,
-	"workbench.iconTheme": "vscode-icons",
-	"terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
-	"terminal.integrated.fontSize": 12,
-	"workbench.sideBar.location": "left",
-	"files.autoSave": "afterDelay",
-	"files.autoSaveDelay": 1000,
-	"editor.minimap.enabled": false,
-	"liveServer.settings.donotShowInfoMsg": true,
-	"workbench.colorTheme": "Noctis",
-	"editor.fontSize": 13,
-	"editor.fontFamily": "Fira Code",
-	"editor.fontLigatures": true,
-	"editor.renderWhitespace": "boundary",
-	"editor.copyWithSyntaxHighlighting": true,
-	"files.associations": {
-		"Dockerfile-centos": "dockerfile",
-		"Dockerfile_*": "dockerfile",
-		"Dockerfile-*": "dockerfile",
-	},
-	"workbench.editor.closeEmptyGroups": true,
-	"breadcrumbs.enabled": true,
-	"editor.suggestSelection": "first",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"terminal.integrated.shell.osx": "/bin/zsh",
-	"debug.node.autoAttach": "off",
-	"editor.insertSpaces": false,
-	"editor.tabSize": 4,
-	// "editor.detectIndentation": true
-	"[javascript]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	"workbench.colorCustomizations": {
-		"terminal.foreground": "#839495",
-		"terminal.background": "#003440"
-	}
+  "editor.formatOnSave": true,
+  "prettier.jsxSingleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.wordWrap": "on",
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "vscode-icons",
+  "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+  "terminal.integrated.fontSize": 12,
+  "workbench.sideBar.location": "left",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.minimap.enabled": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.colorTheme": "Noctis",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.copyWithSyntaxHighlighting": true,
+  "files.associations": {
+    "Dockerfile-centos": "dockerfile",
+    "Dockerfile_*": "dockerfile",
+    "Dockerfile-*": "dockerfile"
+  },
+  "workbench.editor.closeEmptyGroups": true,
+  "breadcrumbs.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "debug.node.autoAttach": "off",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "workbench.colorCustomizations": {
+    "terminal.foreground": "#839495",
+    "terminal.background": "#003440"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
