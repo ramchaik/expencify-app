@@ -5,7 +5,7 @@
     "javascript": "javascriptreact"
   },
   "editor.wordWrap": "on",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "workbench.iconTheme": "vscode-icons",
   "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
   "terminal.integrated.fontSize": 12,
@@ -15,7 +15,6 @@
   "editor.minimap.enabled": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "workbench.colorTheme": "Noctis",
-  "editor.fontSize": 13,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.renderWhitespace": "boundary",
@@ -41,5 +40,6 @@
     "terminal.foreground": "#839495",
     "terminal.background": "#003440"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontSize": 14
 }
