@@ -18,17 +18,24 @@ const database = firebase.database();
 database.ref().set({
     name: "Vaibhav Singh",
     age: 22,
-    isSingle: true,
+    stressLevel: 7,
+    job: {
+        title: "Software Developer",
+        company: "Google"
+    },
     location: {
         city: 'Bangalore',
         country: 'India'
     }
+}).then(() => {
+    console.log("data saved ");
+
+}).catch((err) => {
+    console.log("This failed");
+
 });
 
-database.ref('age').set('23');
-database.ref('location/city').set("Shimla");
-
-database.ref('attributes').set({
-    weight: 65,
-    height: 165
-});
+database.ref().update({
+    stressLevel: 9,
+    "job/company": "Amazon"
+})
