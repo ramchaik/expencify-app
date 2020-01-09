@@ -37,5 +37,6 @@ database.ref().set({
 
 database.ref().update({
     stressLevel: 9,
-    "job/company": "Amazon"
+    "job/company": "Amazon",
+    "location/city": "Gurugram"
 })
