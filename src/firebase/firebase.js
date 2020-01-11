@@ -15,28 +15,48 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: "Vaibhav Singh",
-    age: 22,
-    stressLevel: 7,
-    job: {
-        title: "Software Developer",
-        company: "Google"
-    },
-    location: {
-        city: 'Bangalore',
-        country: 'India'
-    }
-}).then(() => {
-    console.log("data saved ");
+// empty the database
+// database.ref().set({});
+/*
+    To DO:
+     -- fetch the data from firebase
+*/
 
-}).catch((err) => {
-    console.log("This failed");
+database.ref("expenses")
+    .on("child_removed", (snapshot) => {
+        const expenses = [];
 
-});
+        snapshot.forEach(childSnapshot => {
+            expenses.push({
+                id: childSnapshot.key,
+                ...childSnapshot.val()
+            });
+        });
+        console.log("removed successful ?", expenses);
+    })
 
-database.ref().update({
-    stressLevel: 9,
-    "job/company": "Amazon",
-    "location/city": "Gurugram"
-})
+database.ref("expenses")
+    .on("child_changed", (snapshot) => {
+        const expenses = [];
+
+        snapshot.forEach(childSnapshot => {
+            expenses.push({
+                id: childSnapshot.key,
+                ...childSnapshot.val()
+            });
+        });
+        console.log("change successful ?",expenses);
+    })
+
+database.ref("expenses")
+    .on("child_added", (snapshot) => {
+        const expenses = [];
+
+        snapshot.forEach(childSnapshot => {
+            expenses.push({
+                id: childSnapshot.key,
+                ...childSnapshot.val()
+            });
+        });
+        console.log("added a child successful ?",expenses, " where child is : ", snapshot.val());
+    })
