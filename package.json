@@ -7,6 +7,7 @@
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^3.2.0",
     "enzyme-to-json": "3.0.1",
     "express": "^4.17.1",
@@ -26,6 +27,8 @@
     "react-redux": "5.0.5",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
+    "redux-mock-store": "^1.2.3",
+    "redux-thunk": "^2.2.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "uuid": "3.1.0",
@@ -40,16 +43,17 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --config=jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server",
     "heroku-postbuild": "npm run build:prod"
   },
   "devDependencies": {
+    "dotenv": "^4.0.0",
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "jest": "20.0.4",
+    "jest": "23.6.0",
     "react-test-renderer": "16.0.0",
     "webpack-dev-server": "2.5.1"
   }
