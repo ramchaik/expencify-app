@@ -5,7 +5,7 @@
     "javascript": "javascriptreact"
   },
   "editor.wordWrap": "on",
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
   "workbench.iconTheme": "vscode-icons",
   "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
   "terminal.integrated.fontSize": 12,
