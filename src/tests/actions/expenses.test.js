@@ -11,9 +11,6 @@ import {
 } from '../../actions/expenses';
 import expenses from "../fixtures/expenses";
 import database from "../../firebase/firebase";
-import {
-	create
-} from "react-test-renderer";
 
 const createMockStore = configureMockStore([thunk]);
 
@@ -76,6 +73,7 @@ test("should add expense to databse and store", (done) => {
 		amount: 123,
 		createdAt: 234
 	};
+
 	store.dispatch(startAddExpense(expenseData))
 		.then(() => {
 
