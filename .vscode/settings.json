@@ -8,7 +8,7 @@
   "window.zoomLevel": -2,
   "workbench.iconTheme": "vscode-icons",
   "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 14,
   "workbench.sideBar.location": "left",
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,

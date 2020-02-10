@@ -5,7 +5,7 @@ exports[`should render Header correctly 1`] = `
   <h1>
     Expencify
   </h1>
-  <nav>
+  <header>
     <NavLink
       activeClassName="is-active"
       ariaCurrent="true"
@@ -35,6 +35,11 @@ exports[`should render Header correctly 1`] = `
     >
       Help
     </NavLink>
-  </nav>
+    <button
+      onClick={[MockFunction]}
+    >
+      Logout
+    </button>
+  </header>
 </header>
 `;
