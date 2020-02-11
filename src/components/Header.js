@@ -8,7 +8,7 @@ export const Header = ({ startLogout }) => (
 		<h1>Expencify</h1>
 		<header>
 			<NavLink to='/' exact={true} activeClassName='is-active'>
-				Home
+				Dashboard
 			</NavLink>
 			<NavLink to='/create' activeClassName='is-active'>
 				Create
