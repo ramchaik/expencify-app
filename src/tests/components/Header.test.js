@@ -16,5 +16,4 @@ test('should render Header correctly', () => {
 test("should call startLogout on button click", () => {
 	wrapper.find("button").simulate('click');
 	expect(startLogout).toHaveBeenCalled();
-
-})
+});
